@@ -39,5 +39,7 @@ public class FirstProgramm {
 
         // git config --global user.name "Имя"
         // git config --global user.email email
+        
+        // some new code 
     }
 }
