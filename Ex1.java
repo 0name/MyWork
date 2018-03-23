@@ -9,7 +9,6 @@ public class Ex1 {
         if (Math.abs(n - 10) < Math.abs(m - 10)) result = n ;
             else result = m;
 
-			
             System.out.println("Ближайшее к 10 число: " + result);
     }
 }
