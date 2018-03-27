@@ -14,8 +14,8 @@ public class MassivEx6 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите четное число: ");
         int i = sc.nextInt();
-        while (i % 2 != 0) {
-            System.out.println("Вы ввели нечетное число. \n Повторите ввод:");
+        while (i % 2 != 0 || i <= 0) {
+            System.out.println("Вы ввели неверное число. \n Повторите ввод:");
             i = sc.nextInt();
         }
         int arr[] = new int[i];
