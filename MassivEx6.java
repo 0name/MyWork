@@ -24,10 +24,22 @@ public class MassivEx6 {
         int sum2 = 0;
         for (int n = 0; n < arr.length; n++){
             arr[n] = ran.nextInt(11) - 5;
-            sum1 += arr[0] + arr[ 1];
         }
-        System.out.println(Arrays.toString(arr));
-        System.out.println(sum1);
 
+        int sered = arr.length/2;
+        for (int a = 0; a < sered; a++) {
+            sum1 += Math.abs(arr[a]);
+        }
+
+        for (int b = sered; b<arr.length; b++){
+            sum2 += Math.abs(arr[b]);
+        }
+
+
+        System.out.println(Arrays.toString(arr));
+        if (sum1>sum2)System.out.println("сумма модулей левой половины массива больше");
+        if (sum1<sum2)System.out.println("сумма модулей правой половины массива больше");
+        else
+            System.out.println("сумма модулей правой и левой половины равны");
     }
 }
