@@ -3,21 +3,23 @@ public class figures {
     Все фигуры должны иметь методы, которые возвращают площадь и периметр (для окружности - длина окружности).*/
 
 //    создание метода для нахождения площади окружности
-    public double CycleArea(){
+    public double CycleArea(int radius){
         double S = Math.PI * (int)Math.pow(radius, 2);
+        System.out.println("Площадь окружности равна " + S);
         return S;
     }
 
 //    создание метода для нахождения площади прямоугольника
-    public int RectangleArea(){
+    public int RectangleArea(int a, int b){
          int S = a * b ;
         System.out.println("Площадь прямоугольника равна " + S);
         return S;
     }
 
 //  создание метода для нахождения площади треугольника
-    public int TriangleArea(){
+    public int TriangleArea(int a, int h){
          int S = 1/2 * (a * h) ;
+        System.out.println("Площадь треугольника равна " + S);
          return S;
     }
 
