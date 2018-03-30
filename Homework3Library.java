@@ -21,7 +21,7 @@ public class Homework3Library {
     }
 }
 
-public class Book{
+class Book{
     String author, title;
     int pagesNum;
 
