@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Homework3Library {
    /* 1. Сделать библиотеку, которая ведет учет книг. Должно быть как минимум два класса: Book и Library.
    Library имеет два метода: void put(Book book, int quantity) и int get(Book book, int quantity).
@@ -8,17 +11,31 @@ public class Homework3Library {
     Библиотека хранит ограниченное число книг, сколько - на ваше усмотрение.*/
 
     public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+
         Library lib = new Library();
-
+        System.out.println("Сейчас в библиотеке " + lib.quantity + " книг " + "\n");
         Book lordOTR = new Book("Tolkien", "Lord Of The Rings", 1137 );
+        lib.put(lordOTR, 3);
+        lib.get(lordOTR, 1);
+        lib.output(lordOTR, lib.quantity);
 
+        Book azbuka = new Book("narod", "Azbuka", 50 );
+        lib.put(azbuka, 2);
+        lib.get(azbuka, 4);
+        lib.output(azbuka, lib.quantity);
 
+        Book rem = new Book("Remark", "Tri tovarischa ", 137 );
+        lib.put(rem, 1);
+        lib.get(rem, 3);
+        lib.output(rem, lib.quantity);
+
+        System.out.println("Всего в библиотеке осталось " + lib.quantity + " книг");
     }
 }
 
 class Book{
-    String author;
-    String title;
+    String author, title;
     int pagesNum;
 
     public Book(String author, String title, int pagesNum){
@@ -29,14 +46,27 @@ class Book{
 }
 
 class Library{
-    int quantity;
+    int quantity = 10 ;
+  //  Book book[] = new Book[this.quantity];
+    ArrayList<Integer> list = new ArrayList<>(this.quantity);
 
     void put(Book book, int quantity){
-
+        if (quantity <= this.quantity) {
+            this.quantity = this.quantity - quantity;
+            System.out.println("Из библиотеки забрали " + quantity + " кн. " + book.title);
+        } else
+            System.out.println("В библиотеке сейчас нет " + quantity + " кн. " + book.title);
     }
 
-    public int get(Book book, int quantity){
-        System.out.println("В библиотеку добавлена одна книга ");
-        return quantity;
+    public Book get(Book book, int quantity){
+        if (quantity>0) {
+            this.quantity = this.quantity + quantity;
+            System.out.println("В библиотеку добавлено " + quantity + " кн. " + book.title);
+        }
+        return book;
+    }
+
+    public void output(Book book, int  quantity){
+        System.out.println("В библиотеке сейчас " + quantity + " кн. " + book.title);
     }
 }
