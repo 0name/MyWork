@@ -11,7 +11,7 @@ public class Homework3Library {
         Library lib = new Library();
 
         Book lordOTR = new Book("Tolkien", "Lord Of The Rings", 1137 );
-        lib.get(1);
+
 
     }
 }
@@ -35,7 +35,8 @@ class Library{
 
     }
 
-    int get(Book, int quantity){
-
+    public int get(Book book, int quantity){
+        System.out.println("В библиотеку добавлена одна книга ");
+        return quantity;
     }
 }
