@@ -1,4 +1,4 @@
-package calc;
+package Calculator;
 
 public class Operation {
     protected int execute(int a, int b){

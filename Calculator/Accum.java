@@ -1,4 +1,4 @@
-package calc;
+package Calculator;
 
 public class Accum {
     private int value;
@@ -22,5 +22,24 @@ public class Accum {
         System.out.println(acc.getValue());
         acc.accum(5);
         System.out.println(acc.getValue());
+
+        Accum min = new Accum(new Minus(), 10);
+        System.out.println(min.getValue());
+        min.accum(5);
+        System.out.println(min.getValue());
+
+        Accum umn = new Accum(new Proizv(), 11);
+        System.out.println(umn.getValue());
+        umn.accum(3);
+        System.out.println(umn.getValue());
+
+        Accum del = new Accum(new Delenie(), 924);
+        System.out.println(del.getValue());
+        del.accum(3);
+        System.out.println(del.getValue());
+
+
+
+
     }
 }
