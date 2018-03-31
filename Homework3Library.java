@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,26 +12,25 @@ public class Homework3Library {
     Библиотека хранит ограниченное число книг, сколько - на ваше усмотрение.*/
 
     public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-
         Library lib = new Library();
+
         System.out.println("Сейчас в библиотеке " + lib.quantity + " книг " + "\n");
-        Book lordOTR = new Book("Tolkien", "Lord Of The Rings", 1137 );
+        Book lordOTR = new Book("Толкен", "Властелин колец", 1137 );
         lib.put(lordOTR, 3);
         lib.get(lordOTR, 1);
         lib.output(lordOTR, lib.quantity);
 
-        Book azbuka = new Book("narod", "Azbuka", 50 );
+        Book azbuka = new Book("Народ", "Азбука", 50 );
         lib.put(azbuka, 2);
         lib.get(azbuka, 4);
         lib.output(azbuka, lib.quantity);
 
-        Book rem = new Book("Remark", "Tri tovarischa ", 137 );
+        Book rem = new Book("Э.М. Ремарк", "Три товарища ", 137 );
         lib.put(rem, 1);
         lib.get(rem, 3);
         lib.output(rem, lib.quantity);
 
-        System.out.println("Всего в библиотеке осталось " + lib.quantity + " книг");
+        System.out.println("\n Всего в библиотеке осталось " + lib.quantity + " книг");
     }
 }
 
@@ -68,5 +68,6 @@ class Library{
 
     public void output(Book book, int  quantity){
         System.out.println("В библиотеке сейчас " + quantity + " кн. " + book.title);
+
     }
 }
