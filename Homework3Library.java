@@ -2,6 +2,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.sun.tools.internal.xjc.reader.Ring.add;
+
 public class Homework3Library {
    /* 1. Сделать библиотеку, которая ведет учет книг. Должно быть как минимум два класса: Book и Library.
    Library имеет два метода: void put(Book book, int quantity) и int get(Book book, int quantity).
@@ -54,6 +56,7 @@ class Library{
     void put(Book book, int quantity){
         if (quantity <= this.quantity) {
             this.quantity = this.quantity - quantity;
+            this.list = this.list.remove((Integer)quantity); // ошибка incompatible types
             System.out.println("Из библиотеки забрали " + quantity + " кн. " + book.title);
         } else
             System.out.println("В библиотеке сейчас нет " + quantity + " кн. " + book.title);
@@ -62,6 +65,7 @@ class Library{
     public Book get(Book book, int quantity){
         if (quantity>0) {
             this.quantity = this.quantity + quantity;
+            this.list = this.list.add(quantity); // ошибка incompatible types
             System.out.println("В библиотеку добавлено " + quantity + " кн. " + book.title);
         }
         return book;
