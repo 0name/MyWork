@@ -18,6 +18,7 @@ public class Homework3Library {
         Book lordOTR = new Book("Толкен", "Властелин колец", 1137 );
         lib.put(lordOTR, 3);
         lib.get(lordOTR, 1);
+
         lib.output(lordOTR, lib.quantity);
 
         Book azbuka = new Book("Народ", "Азбука", 50 );
