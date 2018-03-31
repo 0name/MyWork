@@ -1,4 +1,6 @@
-public class figures {
+package Homework3;
+
+public class FiguresEx2 {
     /*2. Создать фигуры: Circle, Rectangle, Triangle, у которых будут координаты.
     Все фигуры должны иметь методы, которые возвращают площадь и периметр (для окружности - длина окружности).*/
 
@@ -33,6 +35,7 @@ public class figures {
         big.TrianglePer();
     }
 }
+
 class Circle{
     int index;
     int radius;
@@ -92,14 +95,14 @@ class Triangle{
         this.side2 = side2;
         this.side3 = side3;
     }
-//  создание метода для нахождения площади треугольника
+    //  создание метода для нахождения площади треугольника
     public double TriangleArea(){
         double pp = (side1 + side2 + side3)/2;
         double S = Math.sqrt(pp * (pp-side1) * (pp-side2) * (pp - side3)) ;
         System.out.println("Площадь треугольника равна " + S);
         return S;
     }
-//    создание метода для нахождения периметра треугольника
+    //    создание метода для нахождения периметра треугольника
     public int TrianglePer(){
         int P = side1 + side2 + side3 ;
         System.out.println("Периметр треугольника равен " + P);

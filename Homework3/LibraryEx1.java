@@ -1,9 +1,9 @@
+package Homework3;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Homework3Library {
-   /* 1. Сделать библиотеку, которая ведет учет книг. Должно быть как минимум два класса: Book и Library.
+public class LibraryEx1{
+       /* 1. Сделать библиотеку, которая ведет учет книг. Должно быть как минимум два класса: Book и Library.
    Library имеет два метода: void put(Book book, int quantity) и int get(Book book, int quantity).
    Каждой книге в библиотеке соответствует счетчик, показывающий количество хранящихся книг,
    при добавлении книги - счетчик увеличивается, при извлечении - уменьшается на число quantity.
@@ -50,7 +50,7 @@ class Book{
 
 class Library{
     int quantity = 0 ;
-  //  Book book[] = new Book[this.quantity];
+    //  Book book[] = new Book[this.quantity];
     ArrayList<Integer> list = new ArrayList<>(this.quantity);
 
     void put(Book book, int quantity){
