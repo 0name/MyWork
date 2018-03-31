@@ -1,3 +1,5 @@
+package Homework1;
+
 public class CyclesEx3 {
 //    3) Создайте программу, выводящую на экран первые 20 элементов последовательности 2 4 8 16 32 64 128 ….
     public static void main(String[] args){

@@ -1,3 +1,5 @@
+package Homework1;
+
 public class CyclesEx4 {
 //    4) Проверьте,  является ли натуральное число — простым.
     public static void main(String[] args) {
