@@ -12,6 +12,7 @@ public class Pupil extends People {
 
     public void say (){
         System.out.println("I'm in the " + numOfClass + "th grade");
+        System.out.println("rr");
 }
 
 //    могут посетить урок
