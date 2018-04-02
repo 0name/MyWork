@@ -18,7 +18,7 @@ public Teacher(String name, int age, String status, String predmet, int stage) {
     }
 
     public void putGoodAstimate(){ // поставить хорошую оценку
-        System.out.println("Today I put a good raiting " );
+        System.out.println("Today I put a good raiting to ...");
     }
 
     public void putBadAstimate(){ // поставить плохую оценку
