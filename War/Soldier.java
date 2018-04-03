@@ -32,12 +32,12 @@ class Red extends Soldier{
 }
 
 class White extends Soldier{
-    public White(){
-        super(300, 50);
-    }
-
     @Override
     public void attack(Soldier SoldEnemy) {
         SoldEnemy.health -= this.attackScore + 20;
+    }
+
+    public White(){
+        super(300, 50);
     }
 }
