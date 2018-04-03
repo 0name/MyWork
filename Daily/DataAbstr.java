@@ -1,13 +1,13 @@
 package Daily;
 
 abstract class DataAbstr {
-    protected String name, descr, date, time;
+    protected String name, descr, date,time;
 
     public DataAbstr(String name, String descr, String date, String time) {
         this.name = name;
         this.descr = descr;
-        this.date = date;
-        this.time = time;
+        this.date =date;
+        this.time =time;
     }
 
     public void Add(DataAbstr Task1){
@@ -16,7 +16,6 @@ abstract class DataAbstr {
     }
 
     void Output(String name){
-
     }
 
     void Edit(String name){
