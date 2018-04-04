@@ -8,4 +8,8 @@ public class Meeting extends Data {     // встреча
         super(nazv, description, day, month, year, dayOfWeek, hour, minute);
         this.place = place;
     }
+
+    public String getPlace(){
+        return this.place;
+    }
 }

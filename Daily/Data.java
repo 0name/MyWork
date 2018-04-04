@@ -34,19 +34,23 @@ public class Data {     // общие данные
         System.out.println("Удаление");
     }
 
-    public void output(){
+    public void output(Members memb, Meeting place){        // Members передается
         System.out.println("Вывод информации");
-       System.out.println("У Вас назначена " + nazv + " c //" + " на " + day + " " + month + " (" + dayOfWeek + "). Она состоится в " + hour + ":" + minute + " в " + "//" );
+       System.out.println("У Вас назначена " + nazv + " c " + memb.getName() + " на " + day + " " + month + " (" + dayOfWeek + "). Она состоится в " + hour + ":" + minute + " в " + place.getPlace() );
     }
 
     public static void main(String[] args) {
         Reminder rem1 = new Reminder("Поздравить", "День рожения у тети Маши", 12, "Сен",2018, "Пн", 10,30);
         rem1.add();
+        rem1.output(rem1, );         // как сделать, чтобы не выводились
 
-        Members mem = new Members("Мих", "инженер", "Microsoft");
+        Members mem = new Members("Мих", "инженер", "Microsoft");       //  я задумывал сделать так, чтобы new mem создавался при записи Встречи
 
         Meeting meet1 = new Meeting("Встреча", "по работе ", 12, "Сен",2018, "Пн", 10,30, "S-Pb", mem);
+
         meet1.add();
-        meet1.output();
+        meet1.output(mem, meet1);
+
+
     }
 }

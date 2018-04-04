@@ -10,4 +10,8 @@ public class Members {
         this.title = title;
         this.company = company;
     }
+
+    public String getName(){
+        return this.name;
+    }
 }
