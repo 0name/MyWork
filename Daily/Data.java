@@ -23,7 +23,7 @@ public class Data {     // общие данные
     }
 
     public void add(){
-        System.out.println("Добавление");
+        System.out.println("Добавление новой записи");
     }
 
     public void edit(){
@@ -42,10 +42,11 @@ public class Data {     // общие данные
     public static void main(String[] args) {
         Reminder rem1 = new Reminder("Поздравить", "День рожения у тети Маши", 12, "Сен",2018, "Пн", 10,30);
         rem1.add();
-        rem1.output(rem1, );         // как сделать, чтобы не выводились
+
+        Members pep = new Members("Мих", "инженер", "Microsoft");
+       // rem1.output(pep, rem1);         // как сделать, чтобы не выводились
 
         Members mem = new Members("Мих", "инженер", "Microsoft");       //  я задумывал сделать так, чтобы new mem создавался при записи Встречи
-
         Meeting meet1 = new Meeting("Встреча", "по работе ", 12, "Сен",2018, "Пн", 10,30, "S-Pb", mem);
 
         meet1.add();
