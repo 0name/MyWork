@@ -34,8 +34,13 @@ public class Data {     // общие данные
         System.out.println("Удаление");
     }
 
-    public void output(Members memb, Meeting place){        // Members передается
-        System.out.println("Вывод информации");
+    public void output(Members memb, Meeting place){        // memb передается напрямую из класса Members, а place из класса Meeting
+                                                            // можно ли сделать так, чтобы Members передавался сначала в Meeting, а потом из Meeting передавался сюда в класс Data
+
+                                                            //  и как сделать, чтобы при вызове метода output можно было менять число параметров в скобках
+                                                            // просто если выводить напоминание(класс Reminder), то нужно 8 переменных
+                                                            // а если выводить встречу (класс Meeting), то нужно 8 переменных + member из Members и + place из Meetings
+       System.out.println("Вывод информации");
        System.out.println("У Вас назначена " + nazv + " c " + memb.getName() + " на " + day + " " + month + " (" + dayOfWeek + "). Она состоится в " + hour + ":" + minute + " в " + place.getPlace() );
     }
 
@@ -44,7 +49,7 @@ public class Data {     // общие данные
         rem1.add();
 
         Members pep = new Members("Мих", "инженер", "Microsoft");
-       // rem1.output(pep, rem1);         // как сделать, чтобы не выводились
+       // rem1.output(pep, rem1);
 
         Members mem = new Members("Мих", "инженер", "Microsoft");       //  я задумывал сделать так, чтобы new mem создавался при записи Встречи
         Meeting meet1 = new Meeting("Встреча", "по работе ", 12, "Сен",2018, "Пн", 10,30, "S-Pb", mem);
