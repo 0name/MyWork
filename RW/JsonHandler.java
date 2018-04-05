@@ -1,7 +1,10 @@
-//package RW;
-//
-//public class JsonHandler extends ReadWrite {
-//    protected int execute(int type){
-//
-//    }
-//}
+package RW;
+
+public class JsonHandler extends ReadWrite {
+
+    @Override
+    public ReadWrite getInstance(String extension) {
+        System.out.println("Файл Json");
+        return new JsonHandler();
+    }
+}
