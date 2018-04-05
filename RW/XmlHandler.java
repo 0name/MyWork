@@ -1,10 +1,9 @@
 package RW;
 
-public class XmlHandler extends ReadWrite {
+public class XmlHandler {
 
-    @Override
-    public ReadWrite getInstance(String extension) {
+    public XmlHandler(String extension) {
         System.out.println("Файл Xml");
-        return new XmlHandler(); // аналогично, что и с родительским калссом
+        return new XmlHandler();
     }
 }

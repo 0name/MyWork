@@ -1,9 +1,8 @@
 package RW;
 
-public class JsonHandler extends ReadWrite {
+public class JsonHandler {
 
-    @Override
-    public ReadWrite getInstance(String extension) {
+    public JsonHandler(String file) {
         System.out.println("Файл Json");
         return new JsonHandler();
     }
