@@ -1,14 +1,21 @@
 package RW;
 
-
-abstract public class ReadWrite {
+public abstract class ReadWrite {
     static ReadWrite getInstance(String file) {
 
 // стало вместо if if
-        if (file.endsWith(".xml")) {
+        if (file.endsWith("file_name1.xml")) {
         return new XmlHandler();
         }
         return new JsonHandler();
+    }
+
+    public void Read(ReadWrite file){
+
+    }
+
+    public void Write(ReadWrite file){
+
     }
 
     public static void main(String[] args) {
@@ -25,7 +32,8 @@ abstract public class ReadWrite {
 //        имя файла можно передать в конструкторе
 //        getInstanse лучше сделать static, не создавать экземпляр ConfHandler
 //
-//        лучше сделать абстрактным родителя или интерфейсом и задать методы read() и write(), чтобы в дочерних классах уже была конкретная реализация
+//        лучше сделать абстрактным родителя или интерфейсом и задать методы read() и write(),
+//        чтобы в дочерних классах уже была конкретная реализация
 //
 
 //

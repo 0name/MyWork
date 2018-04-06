@@ -1,9 +1,9 @@
 package RW;
 
-public class XmlHandler {
+public class XmlHandler extends ReadWrite {
 
-    public XmlHandler(String extension) {
+   public XmlHandler(String file) {
         System.out.println("Файл Xml");
-        return new XmlHandler();
-    }
+       return new XmlHandler();
+   }
 }
