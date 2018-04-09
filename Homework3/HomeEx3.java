@@ -106,4 +106,8 @@ class Home {
 
 }
 
+class Human{
+    private String name;
+    private int wantFlat;
+}
 
