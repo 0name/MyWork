@@ -28,8 +28,10 @@ public class HomeEx3 {
     public static void main(String[] args) {
         Home home1 = new Home(2,9);
         home1.setFlat(20);
-        home1.setAdress("Дом1");
-        System.out.println("В доме, расположенном по адресу " + home1.getAdress() + " Подъездов: " + home1.getPod() + ", этажей: " + home1.getFloor() + ". \nВсего в доме "+ home1.getFlat()*home1.getFloor() + " квартир");
+        home1.setAddress("С-Пб, ул. Ломоносова,д.9");
+        System.out.println("В доме, расположенном по адресу " + home1.getAddress() + "\nПодъездов: " + home1.getPod() + ", этажей: " + home1.getFloor() + ". На каждом этаже " + home1.getFlat() + " квартир.");
+        home1.setFlatsOnTheFloor(home1.getPod(), home1.getFloor(), home1.getFlat());
+        home1.add(home1.restFlat);
     }
 }
 
@@ -37,22 +39,32 @@ class Home {
 
     //    описание свойств класса
     private String adress;
-    private int pod, floor, flatsOnTheflor;
+    private int pod, floor, flatsOnThefloor;
+    static int restFlat;
 
-    public void setAdress (String name){
+    //    конструктор
+    public Home(int pod, int floor){
+        this.pod = pod;
+        this.floor = floor;
+        this.restFlat = restFlat;
+    }
+
+    //    описание методов
+
+    public void setAddress (String name){
         this.adress = name;
     }
 
-    public String getAdress() {
+    public String getAddress() {
         return adress;
     }
 
     public int getFlat() {
-        return flatsOnTheflor;
+        return flatsOnThefloor;
     }
 
     public void setFlat(int flat) {
-        this.flatsOnTheflor = flat;
+        this.flatsOnThefloor = flat;
     }
 
     public int getPod() {
@@ -63,18 +75,35 @@ class Home {
         return floor;
     }
 
-    //    конструктор
-    public Home(int pod, int floor){
-        this.pod = pod;
-        this.floor = floor;
+    //У дома должна быть возможность сообщить, сколько людей в нем живет - метод
+    public int getRestFlat() {
+
+        return restFlat;
+    }
+
+    public int setFlatsOnTheFloor (int pod, int floors, int flats){
+        int numbers = pod * floors * flats;
+        System.out.println("Всего в доме " + numbers + " квартир");
+        return numbers;
+    }
+
+    public int add(int num ){
+        restFlat -= 3;
+        System.out.println("В дом заселилось 3 человека");
+        System.out.println("Сейчас в доме " + restFlat);
+        return restFlat ;
+    }
+
+//    public class Line {
+//        static Human[] fd = new Human [300];
+//    }
+
+    class Human{
+
     }
 
 
-    //    описание методов
 
-//У дома должна быть возможность сообщить, сколько в нем квартир - метод
-//У дома должна быть возможность показать адрес - метод
-//У дома должна быть возможность сообщить, сколько людей в нем живет - метод
 }
 
 
