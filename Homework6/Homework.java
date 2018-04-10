@@ -1,10 +1,9 @@
-package HomeworkN;
+package Homework6;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /*
@@ -18,8 +17,8 @@ import java.util.List;
 public class Homework {
     public static void main(String[] args) throws IOException {
 
-        WordsOfWarAndPeace("HomeworkN/MyFile.txt");
 
+        WordsOfWarAndPeace("Homework6/wp.txt");
     }
 
 
@@ -27,16 +26,33 @@ public class Homework {
         File fileWP = new File(filename);
         List<String> lines = Files.readAllLines(fileWP.toPath());
         int words = 0;
+        int a = 0;
+        int b = 0;
 
-        List<String> newList = new ArrayList<>(); // создаем пустой массив
         for (String str : lines) {
-      //      String [] array = str
-            str.split(" ");
-            words++; // считает общее кол-во слов, в том числе предлоги с артиклями и тп
+            if (str.contains(" war ")) {
+                //str.split(" ");
+                words++; // считает общее кол-во слов, в том числе предлоги с артиклями и тп
+            }
+//            if (str.length == 3)
+            if (str.contains("a")){
+                a++;
+            }
+            if (str.contains("b")){
+                b++;
+            }
         }
+//        System.out.println(lines);
 
         System.out.println("В файле " + words + " раз встречается слово \"War\" ");
+
+        List<String> newList = new ArrayList<>(); // создаем пустой массив
+        newList.addAll(lines);
+        System.out.println(newList.size());
+        System.out.println(a);
+        System.out.println(b);
     }
 
+//    public static void Groups(String )
 
 }
