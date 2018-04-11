@@ -28,14 +28,17 @@ public class Homework {
     public static void WordsOfWarAndPeace(String filename, String word) throws IOException {
         File fileWP = new File(filename);
         List<String> lines = Files.readAllLines(fileWP.toPath());
+        List<String> lines2 = new ArrayList<>();
         int words = 0;
 
         //String find = "war"; //передается в качестве параметра в метод
 
         for (String str : lines) {
-
             String [] arr = str.toLowerCase().replaceAll("\\p{Digit}|\\p{P}|\\p{Blank}}", "").trim().split(" ");
-            if ( str.contains(word) && str.length() == word.length()) {
+            for(String s: arr){
+
+            }
+                if ( str.contains(word) && str.length() == word.length()) {
                 //str.split(" ");
                 words++; // считает общее кол-во слов, в том числе предлоги с артиклями и тп
             }else {

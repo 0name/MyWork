@@ -98,7 +98,7 @@ public class CollectionExample {
             File fileTxt = new File("Collections/MyFile.txt");
             List<String> lines = Files.readAllLines(fileTxt.toPath());
             System.out.println(lines);
-            lines.spliterator();
+
 //          Создаем пустую коллекцию
              List<String> newLinkedLst = new ArrayList<>();
              for (String str1: lines){
