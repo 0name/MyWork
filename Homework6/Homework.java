@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -17,42 +18,63 @@ import java.util.List;
 public class Homework {
     public static void main(String[] args) throws IOException {
 
-
-        WordsOfWarAndPeace("Homework6/wp.txt");
+        String path = "Homework6/wp.txt";
+        WordsOfWarAndPeace(path, "war");
+        Groups(path);
+        Alf(path);
     }
 
 
-    public static void WordsOfWarAndPeace(String filename) throws IOException {
+    public static void WordsOfWarAndPeace(String filename, String word) throws IOException {
         File fileWP = new File(filename);
         List<String> lines = Files.readAllLines(fileWP.toPath());
         int words = 0;
-        int a = 0;
-        int b = 0;
+
+        //String find = "war"; //передается в качестве параметра в метод
 
         for (String str : lines) {
-            if (str.contains(" war ")) {
+
+            String [] arr = str.toLowerCase().replaceAll("\\p{Digit}|\\p{P}|\\p{Blank}}", "").trim().split(" ");
+            if ( str.contains(word) && str.length() == word.length()) {
                 //str.split(" ");
                 words++; // считает общее кол-во слов, в том числе предлоги с артиклями и тп
-            }
-//            if (str.length == 3)
-            if (str.contains("a")){
-                a++;
-            }
-            if (str.contains("b")){
-                b++;
+            }else {
+                System.out.println(Arrays.toString(arr));
             }
         }
 //        System.out.println(lines);
 
-        System.out.println("В файле " + words + " раз встречается слово \"War\" ");
+        System.out.println("В файле " + words + " раз встречается слово \"war\" ");
+//        System.out.println(Arrays.toString(arr));
 
-        List<String> newList = new ArrayList<>(); // создаем пустой массив
-        newList.addAll(lines);
-        System.out.println(newList.size());
-        System.out.println(a);
-        System.out.println(b);
+//        List<String> newList = new ArrayList<>(); // создаем пустой массив
+//        newList.addAll(lines);
+//        System.out.println(newList.size());
+//        System.out.println(a);
+//        System.out.println(b);
     }
 
-//    public static void Groups(String )
+    public static void Groups(String filename) throws IOException {
+        String [] arr;
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
+
+        File fileWP = new File(filename);
+        List<String> lines = Files.readAllLines(fileWP.toPath());
+        for (String str : lines) {
+             arr = str.replaceAll("\\p{Digit}|\\p{P}", "").split("");
+
+        }
+
+    }
+
+    public static void Alf(String filename) throws IOException {
+        String [] arr;
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
+
+        File fileWP = new File(filename);
+        List<String> lines = Files.readAllLines(fileWP.toPath());
+    }
 
 }
