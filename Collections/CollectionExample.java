@@ -66,7 +66,6 @@ public class CollectionExample {
 
         System.out.println(colex.contains(col2));
 
-
 //        2. interface List -упорядоченная коллекция, может содержать дублирующиеся элементы
 
 //        доступ, удаление, добавление по индексу
@@ -96,24 +95,26 @@ public class CollectionExample {
 //        2. убрать пробелы в начале и в конце строки
 //        3. поместить в коллекцию только не пустые слова
 
-
             File fileTxt = new File("Collections/MyFile.txt");
             List<String> lines = Files.readAllLines(fileTxt.toPath());
             System.out.println(lines);
-
+            lines.spliterator();
 //          Создаем пустую коллекцию
              List<String> newLinkedLst = new ArrayList<>();
              for (String str1: lines){
-                 newLinkedLst.add(str1.toLowerCase().trim().replace(" ", ""));
+//                 newLinkedLst.add(str1.toLowerCase().trim().replace(" ", ""));
+                 newLinkedLst.add(str1.toLowerCase());
              }
             for (String wordL: newLinkedLst){
-                 System.out.println(wordL);
+                System.out.println(wordL);
             }
-              
+            String[] myArray = lines.toArray(new String[lines.size()]);
+             //myArray.split("");
+             System.out.println(Arrays.toString(myArray));
+             System.out.println("Размер: " + newLinkedLst.size());
 
 //            txt.addFirst()
 //            txt.toLowerCase();
-
 
 //        на каждое действие два метода
 //        element();  возвращает, но Не удаляет элемент из начала очереди (если очередь пуста => будет исключение)
