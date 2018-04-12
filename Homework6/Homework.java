@@ -21,7 +21,8 @@ public class Homework {
 
         WordsOfWarAndPeace(path, findingWord);
         Groups(path);
-        Alph(path);
+        Ten(path);
+     //   Alph(path);
     }
 //  1. Сосчитать частоту встречаемости слов в книге War and peace.
     public static void WordsOfWarAndPeace(String filename, String word) throws IOException {
@@ -71,27 +72,65 @@ public class Homework {
         System.out.println(col2);
     }
 
+    //  3. Вывести топ 10 самых частых слов и фраз.
+    public static void Ten(String filename) throws IOException {
+        File fileWP = new File(filename);
+        List<String> lines = Files.readAllLines(fileWP.toPath()); // создаем коллекцию в которую помещаем содержимое файла
+        String arr[];
+        int i = 0;
+        Map<String, Integer> words = new HashMap<>();
+
+        for (String str : lines) {
+            arr = str.toLowerCase().replaceAll("\\p{Digit}|\\p{P}|=", "").trim().split(" ");
+            for (String s : arr) {
+                if (!s.equals("")) {
+                    if (words.containsKey(s)) {
+                        words.put(s, words.get(s) + 1);
+                    } else {
+                        words.put(s, 1);
+                    }
+                }
+            }
+        }
+//        for (int j = 0; j <10 ; j++){
+            for (Map.Entry entry: words.entrySet()) {
+                if ((Integer)entry.getValue()>7000)
+                System.out.println(entry.getKey() + " : " + entry.getValue());
+            }
+            System.out.println(words);
+    }
+
 //  5. Вывести частоту встречаемости букв анг алфавита по этой книге. Вывести в процентах для каждой буквы.
     public static void Alph(String filename) throws IOException {
         File fileWP = new File(filename);
         List<String> lines = Files.readAllLines(fileWP.toPath()); // создаем коллекцию в которую помещаем содержимое файла
         String arr [];
-        int i=0;
+        float sum = 0;
+        int i = 0;
         Map<String, Integer> alphabet = new HashMap<>();
 
         for (String str : lines) {
             arr = str.toLowerCase().replaceAll("\\p{Digit}|\\p{P}|\\p{Blank}|=", "").trim().split("");
-            for(String s: arr){
-                if(alphabet.containsKey(s)){
-                    alphabet.put(s, alphabet.get(s)+1);
-                }else{
-                    alphabet.put(s,1);
+            for(String s: arr) {
+                if (!s.equals("")){
+                    if (alphabet.containsKey(s)) {
+                        alphabet.put(s, alphabet.get(s) + 1);
+                    } else {
+                        alphabet.put(s, 1);
+                    }
+                    i++;
                 }
-                i++;
                 //System.out.println(alphabet.get(s));
             }
         }
-       System.out.println(alphabet);
-        System.out.println("Слово \"" );
+
+        for (Map.Entry entry: alphabet.entrySet()) {
+            float proc = (Integer)entry.getValue()*100f/i;
+            System.out.println(entry.getKey() + " : " + proc);  // можно ли как-нибудь отформатировать вывод до двух знаков например
+            sum += proc;
+        }
+        System.out.println(sum);
+//       System.out.println(i);
+       // System.out.println(alphabet.get(s));
     }
 }
