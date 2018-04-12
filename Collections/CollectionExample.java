@@ -95,23 +95,25 @@ public class CollectionExample {
 //        2. убрать пробелы в начале и в конце строки
 //        3. поместить в коллекцию только не пустые слова
 
-            File fileTxt = new File("Collections/MyFile.txt");
-            List<String> lines = Files.readAllLines(fileTxt.toPath());
-            System.out.println(lines);
+        File fileTxt = new File("Collections/MyFile.txt");
+        List<String> lines = Files.readAllLines(fileTxt.toPath());  // создаем коллекцию в которую помещаем содержимое файла
+        System.out.println(lines);                                  // вывод коллекцию на экран
 
-//          Создаем пустую коллекцию
-             List<String> newLinkedLst = new ArrayList<>();
-             for (String str1: lines){
-//                 newLinkedLst.add(str1.toLowerCase().trim().replace(" ", ""));
-                 newLinkedLst.add(str1.toLowerCase());
-             }
-            for (String wordL: newLinkedLst){
-                System.out.println(wordL);
+        List<String> newLinkedLst = new ArrayList<>();//          Создаем пустую коллекцию
+        String[] myArray ;                          //          Создаем пустой массив
+
+        for (String str1: lines){                     //           пробегаем по коллекции lines
+            myArray = str1.toLowerCase().trim().split(" ");      // в массив myArray добавляем новые элементы, которые сначала переводим в нижний регистр,
+                                                                        //  затем обрезаем пробелы в начале и в конце, а затем разделяем сроки по пробелу " "
+            for(String wor: myArray){                           // цикл
+                newLinkedLst.add(wor);                          // добавляем элементы массива myArray в коллекцию newLinkedLst
             }
-            String[] myArray = lines.toArray(new String[lines.size()]);
-             //myArray.split("");
-             System.out.println(Arrays.toString(myArray));
-             System.out.println("Размер: " + newLinkedLst.size());
+        }
+
+        for (String str1: newLinkedLst){
+            System.out.println(str1);
+        }
+        System.out.println("Размер: " + newLinkedLst.size());
 
 //            txt.addFirst()
 //            txt.toLowerCase();
