@@ -1,14 +1,14 @@
 package Homework5;
 
-public class JsonHandler extends ReadWrite{
+public class JsonHandler extends Handler{
 
-    public void read(){
-        this.read();
+    @Override
+    public void read() {
         System.out.println("Reading JSON");
     }
 
-    public void write(){
-        this.write();
+    @Override
+    public void write() {
         System.out.println("Writing JSON");
     }
 }

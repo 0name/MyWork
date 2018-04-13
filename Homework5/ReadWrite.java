@@ -1,9 +1,8 @@
 package Homework5;
 
 public abstract class ReadWrite {
-    protected abstract void read();
-    protected abstract void write();
-    static ReadWrite getInstance(String file) {
+
+    static Handler getInstance(String file) {
 
 // стало вместо if if
         if (file.endsWith(".xml")) {
@@ -12,21 +11,10 @@ public abstract class ReadWrite {
         return new JsonHandler();
     }
 
-    public void read(ReadWrite file){
-
-    }
-
-    public void write(ReadWrite file){
-
-    }
-
     public static void main(String[] args) {
 
-        ReadWrite newXml = ReadWrite.getInstance("dsdfdsf.xml"); // допустим создается новый файл Xml
-        ReadWrite newJson = ReadWrite.getInstance("dsdfdsf.json");
-
-        newXml.read();
-        newXml.write();
+        getInstance("dsdfdsf.xml").write(); // допустим создается новый файл Xml
+        getInstance("dsdfdsf.json").read();
     }
 }
 

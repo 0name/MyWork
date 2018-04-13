@@ -1,14 +1,14 @@
 package Homework5;
 
-public class XmlHandler extends ReadWrite {
+public class XmlHandler extends Handler {
 
+    @Override
     public void read(){
-        this.read();
         System.out.println("Reading XML");
     }
 
-    public void write(){
-        this.write();
+    @Override
+    public void write() {
         System.out.println("Writing XML");
     }
 }
