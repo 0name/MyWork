@@ -93,6 +93,9 @@ public class Homework {
             }
         }
 //        for (int j = 0; j <10 ; j++){
+//          int i = 7000;
+//          if (j>
+//      }
             for (Map.Entry entry: words.entrySet()) {
                 if ((Integer)entry.getValue()>7000)
                 System.out.println(entry.getKey() + " : " + entry.getValue());

@@ -9,30 +9,24 @@ class JsonHandler implements Handler{
 
     @Override
     public void read() {
-
     }
-
     @Override
     public void write() {
-
     }
 }
 class XmlHandler implements Handler{
 
     @Override
     public void read() {
-
     }
-
     @Override
     public void write() {
-
     }
 }
 
 class FactoryPattern {
     public Handler getChild(String str){
-        if (str.equals("A")) {
+        if (str.equals("file_name1.xml")) {
             return new JsonHandler();
         } else {
             return new XmlHandler();
@@ -44,7 +38,6 @@ class FactoryPattern {
         Handler handler = factoryPattehn.getChild("config.jsonh");
         handler.read();
         handler.write();
-
     }
 //    Определяет интерфейс для создвния, но оставляет подкласам решение о том, какой класс инстанцировать.
 //    Фабричный метод позволяет классу делегировать создание подкласса.

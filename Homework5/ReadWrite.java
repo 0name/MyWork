@@ -1,29 +1,32 @@
-package RW;
+package Homework5;
 
 public abstract class ReadWrite {
+    protected abstract void read();
+    protected abstract void write();
     static ReadWrite getInstance(String file) {
 
 // стало вместо if if
-        if (file.endsWith("file_name1.xml")) {
+        if (file.endsWith(".xml")) {
         return new XmlHandler();
         }
         return new JsonHandler();
     }
 
-    public void Read(ReadWrite file){
+    public void read(ReadWrite file){
 
     }
 
-    public void Write(ReadWrite file){
+    public void write(ReadWrite file){
 
     }
 
     public static void main(String[] args) {
 
-//        ReadWrite xml = new ReadWrite();
-        ReadWrite readWrite = ReadWrite.getInstance("dsdfdsf.xml");
-//        ReadWrite.read();
-//        ReadWrite.write();
+        ReadWrite newXml = ReadWrite.getInstance("dsdfdsf.xml"); // допустим создается новый файл Xml
+        ReadWrite newJson = ReadWrite.getInstance("dsdfdsf.json");
+
+        newXml.read();
+        newXml.write();
     }
 }
 
