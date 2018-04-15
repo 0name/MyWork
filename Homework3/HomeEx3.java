@@ -93,17 +93,6 @@ class Home {
         System.out.println("Сейчас в доме " + restFlat);
         return restFlat ;
     }
-
-//    public class Line {
-//        static Human[] fd = new Human [300];
-//    }
-
-    class Human{
-
-    }
-
-
-
 }
 
 class Human{

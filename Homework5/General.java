@@ -1,6 +1,6 @@
 package Homework5;
 
-public abstract class ReadWrite {
+public abstract class General {
 
     static Handler getInstance(String file) {
 
