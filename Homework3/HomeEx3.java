@@ -32,6 +32,10 @@ public class HomeEx3 {
         System.out.println("В доме, расположенном по адресу " + home1.getAddress() + "\nПодъездов: " + home1.getPod() + ", этажей: " + home1.getFloor() + ". На каждом этаже " + home1.getFlat() + " квартир.");
         home1.setFlatsOnTheFloor(home1.getPod(), home1.getFloor(), home1.getFlat());
         home1.add(home1.restFlat);
+        Human man = new Human("Peter", 5);
+        Human woman = new Human("Mary", 2);
+        Human man2 = new Human("Mike", 12);
+
     }
 }
 
@@ -87,7 +91,8 @@ class Home {
         return numbers;
     }
 
-    public int add(int num ){
+    public int add(Home num ){
+
         restFlat -= 3;
         System.out.println("В дом заселилось 3 человека");
         System.out.println("Сейчас в доме " + restFlat);
@@ -98,5 +103,11 @@ class Home {
 class Human{
     private String name;
     private int wantFlat;
+    public int col;
+
+    public Human(String name, int wantFlat){
+        this.name = name;
+        this.wantFlat = wantFlat;
+    }
 }
 
