@@ -114,7 +114,7 @@ class Human{
 
     public int getWantFlat() {
         Random randFloor = new Random();
-        int wantFlat = randFloor.nextInt(.getFloor());
+        int wantFlat = randFloor.nextInt(.getFloor());  // как добавить сюда значение numbers из др. метода setFlatsOnTheFloor?
         return wantFlat;
     }
 }
