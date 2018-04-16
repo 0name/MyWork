@@ -23,6 +23,8 @@ package Homework3;
 //он перемещяется в конец очереди.
 //Если не хватило места - остается на прежнем месте, ждать нового дома
 
+import java.util.Random;
+
 public class HomeEx3 {
 
     public static void main(String[] args) {
@@ -36,7 +38,6 @@ public class HomeEx3 {
 }
 
 class Home {
-
     //    описание свойств класса
     private String adress;
     private int pod, floor, flatsOnThefloor;
@@ -50,7 +51,6 @@ class Home {
     }
 
     //    описание методов
-
     public void setAddress (String name){
         this.adress = name;
     }
@@ -88,8 +88,10 @@ class Home {
     }
 
     public int add(int num ){
-        restFlat -= 3;
-        System.out.println("В дом заселилось 3 человека");
+        Random rand = new Random();
+        int col = rand.nextInt(3);
+        restFlat =  - col;
+        System.out.println("В дом заселилось " + col + ((col == 1 )? " человек" : " человека"));
         System.out.println("Сейчас в доме " + restFlat);
         return restFlat ;
     }
@@ -98,5 +100,16 @@ class Home {
 class Human{
     private String name;
     private int wantFlat;
+
+    public Human(String name, int want){
+        this.name = name;
+        this.wantFlat = want;
+    }
+
+    public int getWantFlat() {
+        Random randFloor = new Random();
+        int wantFlat = randFloor.nextInt(.getFloor());
+        return wantFlat;
+    }
 }
 
