@@ -34,10 +34,15 @@ public class HomeEx3 {
         System.out.println("В доме, расположенном по адресу " + home1.getAddress() + "\nПодъездов: " + home1.getPod() + ", этажей: " + home1.getFloor() + ". На каждом этаже " + home1.getFlat() + " квартир.");
         home1.setFlatsOnTheFloor(home1.getPod(), home1.getFloor(), home1.getFlat());
         home1.add(home1.restFlat);
+        Human man = new Human("Peter", 5);
+        Human woman = new Human("Mary", 2);
+        Human man2 = new Human("Mike", 12);
+
     }
 }
 
 class Home {
+
     //    описание свойств класса
     private String adress;
     private int pod, floor, flatsOnThefloor;
@@ -51,6 +56,7 @@ class Home {
     }
 
     //    описание методов
+
     public void setAddress (String name){
         this.adress = name;
     }
