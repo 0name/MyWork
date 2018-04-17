@@ -94,9 +94,10 @@ class Home {
     }
 
     public int add(int num ){
+        restFlat = num
         Random rand = new Random();
         int col = rand.nextInt(3);
-        restFlat =  - col;
+        restFlat =- col;
         System.out.println("В дом заселилось " + col + ((col == 1 )? " человек" : " человека"));
         System.out.println("Сейчас в доме " + restFlat);
         return restFlat ;
@@ -112,9 +113,15 @@ class Human{
         this.wantFlat = want;
     }
 
+    public void qeue(){
+        if(wantFlat== ){
+
+        }
+    }
+
     public int getWantFlat() {
         Random randFloor = new Random();
-        int wantFlat = randFloor.nextInt(.getFloor());  // как добавить сюда значение numbers из др. метода setFlatsOnTheFloor?
+        int wantFlat = randFloor.nextInt(12);  // как добавить сюда значение numbers из др. метода setFlatsOnTheFloor?
         return wantFlat;
     }
 }
