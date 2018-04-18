@@ -33,10 +33,12 @@ public class HomeEx3 {
         home1.setAddress("С-Пб, ул. Ломоносова,д.9");
         System.out.println("В доме, расположенном по адресу " + home1.getAddress() + "\nПодъездов: " + home1.getPod() + ", этажей: " + home1.getFloor() + ". На каждом этаже " + home1.getFlat() + " квартир.");
         home1.setFlatsOnTheFloor(home1.getPod(), home1.getFloor(), home1.getFlat());
-        home1.add(home1.restFlat);
-        Human man = new Human("Peter", 5);
-        Human woman = new Human("Mary", 2);
-        Human man2 = new Human("Mike", 12);
+        Human man = new Human("Пётр", home1.getFloor());
+        Human woman = new Human("Маша", home1.getFloor());
+        Human man2 = new Human("Миша", home1.getFloor());
+        System.out.println("Меня зовут " + man.getName() + ". Я хочу жить на " + man.getWantFlat(home1.getFloor()) + "этаже.");
+        home1.add(home1.setFlatsOnTheFloor(home1.getPod(), home1.getFloor(), home1.getFlat()), man.getWantFlat(home1.getFloor()), man.getWantFlat(home1.getFloor()) ); // Очень длинное выражение получилось.
+        // можно ли как-нибудь сократить строку выше ?
 
     }
 }
@@ -93,12 +95,18 @@ class Home {
         return numbers;
     }
 
-    public int add(int num ){
-        restFlat = num
+    public int add(int numbersOfFlats, int restFlatsOnTheFloor, int wantHuman){
         Random rand = new Random();
         int col = rand.nextInt(3);
-        restFlat =- col;
-        System.out.println("В дом заселилось " + col + ((col == 1 )? " человек" : " человека"));
+        System.out.println("В дом хотят заселииться " + col + " человек");
+        if(restFlatsOnTheFloor >= col){  // если на этаже осталось квартир больше или равно скольки-то
+            restFlat = numbersOfFlats - col;        // из всего количества квартир выыычетаем       \
+                                                    // нужно вычесть и предусмотреть, чтобы сохранялось определенное количество квартир на каждом этаже
+            System.out.println("В дом заселилось " + col + ((col == 1 )? " человек" : " человека"));
+        } else{
+
+            System.out.println("К сожалению, желаемый этаж уже весь занят");
+        }
         System.out.println("Сейчас в доме " + restFlat);
         return restFlat ;
     }
@@ -113,15 +121,17 @@ class Human{
         this.wantFlat = want;
     }
 
-    public void qeue(){
-        if(wantFlat== ){
-
-        }
+    public String getName() {
+        return name;
     }
 
-    public int getWantFlat() {
+    public void Human(int wantFlat) {
+        this.wantFlat = wantFlat;
+    }
+
+    public int getWantFlat(int want) {
         Random randFloor = new Random();
-        int wantFlat = randFloor.nextInt(12);  // как добавить сюда значение numbers из др. метода setFlatsOnTheFloor?
+        int wantFlat = randFloor.nextInt(want);  //rак добавить сюда значение numbers из др. метода setFlatsOnTheFloor?
         return wantFlat;
     }
 }
