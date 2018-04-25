@@ -4,8 +4,8 @@ abstract public class Common {
     protected int id;            // имя сотрудника
     protected String name;            // имя сотрудника
 
-    public Common(int id, String name) {
-        this.id = id;
+    public Common(idGenerator ident, String name) {
+        this.id = ident;
         this.name = name;
     }
 
