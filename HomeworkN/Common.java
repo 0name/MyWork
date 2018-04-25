@@ -1,14 +1,12 @@
 package HomeworkN;
 
-abstract public class Base {
+abstract public class Common {
     protected int id;            // имя сотрудника
     protected String name;            // имя сотрудника
 
-    protected String typeOfPayroll; // тип оплаты сотрудника
-
-    public Base(String name, String typeOfPayroll) {
+    public Common(int id, String name) {
+        this.id = id;
         this.name = name;
-        this.typeOfPayroll = typeOfPayroll;
     }
 
     abstract public void payroll();
