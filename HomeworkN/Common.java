@@ -1,12 +1,17 @@
 package HomeworkN;
 
 abstract public class Common {
-    protected idGenerator id;            // имя сотрудника
+    protected int id;            // имя сотрудника
     protected String name;            // имя сотрудника
 
-    public Common(idGenerator ident, String name) {
-        this.id = ident;
+    public Common( String name) {
+        this.id = idGenerator.getId();
         this.name = name;
+
+    }
+
+    public int getId() {
+        return id;
     }
 
     abstract public void payroll();
