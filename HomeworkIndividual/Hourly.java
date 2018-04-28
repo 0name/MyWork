@@ -1,11 +1,13 @@
-package HomeworkN;
+package HomeworkIndividual;
+
+import HomeworkIndividual.Common;
 
 public class Hourly extends Common {
 
     public Hourly( String name) {
         super(name);
     }
-    double stavka = 1.2;
+    private double stavka = 150;
 
     @Override
     public void payroll() {

@@ -1,4 +1,4 @@
-package HomeworkN;
+package HomeworkIndividual;
 
 public class Fixed extends Common {
 

@@ -11,9 +11,9 @@ import java.io.*;
 public class io {
     public static void main(String[] args) {
         try (FileInputStream inputStream = new FileInputStream("file.txt")){
-            File Directory = new File("src/folder");
+            File Directory = new File("HomeworkN1/folder");
             if(!Directory.exists()) Directory.mkdir();
-            try(FileOutputStream outputStream = new FileOutputStream("src/folder/file.txt")){
+            try(FileOutputStream outputStream = new FileOutputStream("HomeworkN1/folder/file.txt")){
                 byte[] bytes = new byte[inputStream.available()];
                 int length;
 
