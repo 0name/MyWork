@@ -11,7 +11,7 @@ public class DesignPattern {
 //    Singleton
 //        Factory
 //        Abstract Factory
-//        Builder
+//        BuilderClassic
 //        Prototype
 //    Структурные - определяют различные сложные структуры,
 //    которые изменяют интерфейс уже существующих обхектов или
