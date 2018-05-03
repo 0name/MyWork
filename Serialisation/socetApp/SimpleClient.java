@@ -30,7 +30,7 @@ public class SimpleClient {
             System.out.println("Enter server addr");
             addr = scanner.nextLine();
         }
-//        "212.21.21.21^9085"
+//        "212.21.21.21:9085"
         SimpleClient simpleClient = new SimpleClient(parseAddr(addr), scanner);
         simpleClient.start();
     }

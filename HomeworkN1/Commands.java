@@ -1,6 +1,8 @@
 package HomeworkN1;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Commands {
     public static File creatingNewFile() throws IOException {
@@ -19,12 +21,21 @@ public class Commands {
         return file;
     }
 
-    static void copyingFile(File source) throws IOException {
+    // пишем в файл с помощью Files
+    static void writeUsingFiles(String data) {
+        try {
+            Files.write(Paths.get("HomeworkN1/file.txt"), data.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+//    Используем потоки для копирования файла
+    static void copyingFile(File source, File newFile) throws IOException {
         InputStream input = null;
         OutputStream output = null;
         try{
             input = new FileInputStream(source);
-            File newFile = new File("newFile.txt");
             output = new FileOutputStream(newFile);
             byte[] buffer = new byte[1024];
             int length;
@@ -36,5 +47,14 @@ public class Commands {
             output.close();
         }
 
+    }
+
+/*    // простой и удобный метод копирования файла начиная с Java 7
+    private static void copyFileUsingJava7Files(File source, File dest) throws IOException {
+        Files.copy(source.toPath(), dest.toPath());
+    }*/
+
+    public static void splitFile(File file) throws IOException{
+        http://qaru.site/questions/776644/how-to-break-a-file-into-pieces-using-java
     }
 }

@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import static HomeworkN1.Commands.creatingNewFile;
 import static HomeworkN1.Commands.copyingFile;
+import static HomeworkN1.Commands.writeUsingFiles;
 
 //        1) Скопировать файл
 //        2) Разбить/склеить файл. Размер куска задается
@@ -14,8 +15,14 @@ import static HomeworkN1.Commands.copyingFile;
 //        b) Зашифровать/ дешифровать файл другим файлом
 public class io {
     public static void main(String[] args) throws IOException {
+        String data = "Это тестовая строка для записи в файл";
 
-        copyingFile(creatingNewFile());
+        File originFile = creatingNewFile();
+        writeUsingFiles(data);
+
+        File newFile = new File("HomeworkN1/newFile.txt");
+
+        copyingFile(originFile, newFile);
 
     }
 
