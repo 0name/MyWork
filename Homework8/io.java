@@ -1,12 +1,9 @@
-package HomeworkN1;
+package Homework8;
 
-import javax.imageio.stream.FileCacheImageInputStream;
 import java.io.*;
-import java.util.Scanner;
+import java.util.List;
 
-import static HomeworkN1.Commands.creatingNewFile;
-import static HomeworkN1.Commands.copyingFile;
-import static HomeworkN1.Commands.writeUsingFiles;
+import static Homework8.Commands.*;
 
 //        1) Скопировать файл
 //        2) Разбить/склеить файл. Размер куска задается
@@ -15,14 +12,20 @@ import static HomeworkN1.Commands.writeUsingFiles;
 //        b) Зашифровать/ дешифровать файл другим файлом
 public class io {
     public static void main(String[] args) throws IOException {
-        String data = "Это тестовая строка для записи в файл";
 
         File originFile = creatingNewFile();
-        writeUsingFiles(data);
+        writeUsingFiles(originFile);
 
-        File newFile = new File("HomeworkN1/newFile.txt");
+        copyingFile(originFile);
 
-        copyingFile(originFile, newFile);
+        splitFile(originFile);
+
+//        List listOfFiles = null;
+//        while(originFile.exists()) {
+//            listOfFiles.add(originFile);
+//        }
+
+    //    mergeFiles(listOfFiles );
 
     }
 
@@ -31,7 +34,7 @@ public class io {
 //        System.out.println("Введите имя файла " + scanner);
 
         String fileSeporator = System.getProperty("file.separator"); // разделитель пути в текущей ОС
-        String absoluteFilePath = "HomeworkN1" + fileSeporator + "file.txt"; // scanner;
+        String absoluteFilePath = "Homework8" + fileSeporator + "file.txt"; // scanner;
 
             File file = new File(absoluteFilePath);
             if (file.createNewFile()) {
