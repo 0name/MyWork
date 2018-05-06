@@ -3,10 +3,13 @@ package Homework8;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
 public class Commands {
+
     public static File creatingNewFile() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Сейчас будет создан текстовый файл \nВведите название файла(без расширения): ");
@@ -61,7 +64,9 @@ public class Commands {
     }*/
 
 // разбить файл
-    public static void splitFile(File file) throws IOException{
+    public static ArrayList splitFile(File file) throws IOException{
+
+        ArrayList listOfFiles = new ArrayList();
         int partCount = 1;
         System.out.println("Введите размер файлов");
         Scanner scan = new Scanner(System.in);
@@ -69,23 +74,26 @@ public class Commands {
         byte[] buffer = new byte[sizeOfFiles];
         String fileName = file.getName();
         FileInputStream fis = new FileInputStream(file);
-        //List listOfFiles = null;
+
         try( BufferedInputStream bis = new BufferedInputStream(fis)){
 
             int bytesAmount = 0;
             while((bytesAmount = bis.read(buffer)) > 0) {
                 String filePartName = String.format("%s.%03d", fileName, partCount++);
                 File newFile = new File(file.getParent(), filePartName);
-                //listOfFiles.add(newFile);
+                listOfFiles.add(newFile);                 //
                 try (FileOutputStream out = new FileOutputStream(newFile)){
                     out.write(buffer, 0, bytesAmount);
                 }
             }
+            System.out.println(listOfFiles) ;
         }
+        return listOfFiles;
     }
 
 // склеить файл
     public static void mergeFiles(List<File> files) throws IOException {
+
         File newFile = new File("Homework8/merged.txt");
         try (FileOutputStream fos = new FileOutputStream(newFile);
              BufferedOutputStream mergingStream = new BufferedOutputStream(fos)) {
@@ -93,5 +101,15 @@ public class Commands {
                 Files.copy(f.toPath(), mergingStream);
             }
         }
+    }
+
+//    a) Зашифровать/ дешифровать файл паролем (XOR)
+    public static void encription(File ref){
+        System.out.println("Зашифруем исходный файл паролем");
+
+    }
+
+    public static void decryption(){
+        System.out.println("Расшифруем файл");
     }
 }

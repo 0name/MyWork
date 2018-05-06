@@ -1,6 +1,7 @@
 package Homework8;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import static Homework8.Commands.*;
@@ -18,29 +19,15 @@ public class io {
 
         copyingFile(originFile);
 
-        splitFile(originFile);
+        //splitFile(originFile);  // второй раз выводится сообщение "Введите размер файлов" как сделать что-бы соообщение не повторялось,
+                                // а просто список файлов передавлся в качестве параметра для следующего метода-|
+                                // или как выдернуть список файлов из метода splitFile                          |
+                                // если сделать чтобы он (метод) не return-ил этот список                       |                                                                            |
+        mergeFiles(splitFile(originFile));      //                                                          <---|
 
-//        List listOfFiles = null;
-//        while(originFile.exists()) {
-//            listOfFiles.add(originFile);
-//        }
+        encription(originFile);
 
-    //    mergeFiles(listOfFiles );
+        decryption();
 
     }
-
-/*    public static void creatingNewFile() throws IOException {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введите имя файла " + scanner);
-
-        String fileSeporator = System.getProperty("file.separator"); // разделитель пути в текущей ОС
-        String absoluteFilePath = "Homework8" + fileSeporator + "file.txt"; // scanner;
-
-            File file = new File(absoluteFilePath);
-            if (file.createNewFile()) {
-                System.out.println(absoluteFilePath + " файл создан");
-            } else {
-                System.out.println("Файл " + absoluteFilePath + " уже существует");
-        }
-    }*/
 }
