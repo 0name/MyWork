@@ -105,8 +105,24 @@ public class Commands {
     }
 
 //    a) Зашифровать/ дешифровать файл паролем (XOR)
-    public static void encription(File ref){
+    public static void encription(File ref) throws IOException {
         System.out.println("Зашифруем исходный файл паролем");
+        System.out.println("Введите пароль:");
+        Scanner sc = new Scanner(System.in);
+        String pswrd = sc.nextLine();
+
+        try (InputStream in = new FileInputStream((ref));
+            ByteArrayOutputStream bout = new ByteArrayOutputStream()){
+
+            }
+
+        byte [] txt = pText.getBytes();
+        byte [] key = pswrd.getBytes();
+        byte [] res = new byte[pText.length()];
+
+        for (int i = 0; i < txt.length; i++){
+            res[i] = (byte) (txt[i] ^ key [i % key.length]);
+        }
 
     }
 
