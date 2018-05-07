@@ -1,5 +1,7 @@
 package Homework8;
 
+import Patterns.Command.Command;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +21,14 @@ public class io {
 
         copyingFile(originFile);
 
-        //splitFile(originFile);  // второй раз выводится сообщение "Введите размер файлов" как сделать что-бы соообщение не повторялось,
+        splitFile(originFile);  // второй раз выводится сообщение "Введите размер файлов" как сделать что-бы соообщение не повторялось,
                                 // а просто список файлов передавлся в качестве параметра для следующего метода-|
                                 // или как выдернуть список файлов из метода splitFile                          |
                                 // если сделать чтобы он (метод) не return-ил этот список                       |                                                                            |
-        mergeFiles(splitFile(originFile));      //                                                          <---|
+        //ArrayList <File> param = splitFile(originFile);
+
+        mergeFiles(Commands.listOfFiles2);      //                                                          <---|
+
 
         encription(originFile);
 

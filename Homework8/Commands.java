@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Commands {
-
+    public static ArrayList<File> listOfFiles2;
     public static File creatingNewFile() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Сейчас будет создан текстовый файл \nВведите название файла(без расширения): ");
@@ -66,7 +66,8 @@ public class Commands {
 // разбить файл
     public static ArrayList splitFile(File file) throws IOException{
 
-        ArrayList listOfFiles = new ArrayList();
+        //ArrayList listOfFiles = new ArrayList();
+        listOfFiles2 = new ArrayList();
         int partCount = 1;
         System.out.println("Введите размер файлов");
         Scanner scan = new Scanner(System.in);
@@ -81,14 +82,14 @@ public class Commands {
             while((bytesAmount = bis.read(buffer)) > 0) {
                 String filePartName = String.format("%s.%03d", fileName, partCount++);
                 File newFile = new File(file.getParent(), filePartName);
-                listOfFiles.add(newFile);                 //
+                listOfFiles2.add(newFile);                 //
                 try (FileOutputStream out = new FileOutputStream(newFile)){
                     out.write(buffer, 0, bytesAmount);
                 }
             }
-            System.out.println(listOfFiles) ;
+            System.out.println(listOfFiles2) ;
         }
-        return listOfFiles;
+        return listOfFiles2;
     }
 
 // склеить файл
