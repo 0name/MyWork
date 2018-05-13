@@ -21,14 +21,9 @@ public class io {
 
         copyingFile(originFile);
 
-        splitFile(originFile);  // второй раз выводится сообщение "Введите размер файлов" как сделать что-бы соообщение не повторялось,
-                                // а просто список файлов передавлся в качестве параметра для следующего метода-|
-                                // или как выдернуть список файлов из метода splitFile                          |
-                                // если сделать чтобы он (метод) не return-ил этот список                       |                                                                            |
-        //ArrayList <File> param = splitFile(originFile);
+        splitFile(originFile);
 
-        mergeFiles(Commands.listOfFiles2);      //                                                          <---|
-
+        mergeFiles(getListOfFiles2());
 
         encription(originFile);
 

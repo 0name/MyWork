@@ -10,6 +10,11 @@ import java.util.Scanner;
 
 public class Commands {
     public static ArrayList<File> listOfFiles2;
+
+    public static ArrayList<File> getListOfFiles2() {
+        return listOfFiles2;
+    }
+
     public static File creatingNewFile() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Сейчас будет создан текстовый файл \nВведите название файла(без расширения): ");
@@ -116,13 +121,13 @@ public class Commands {
 
             }
 
-        byte [] txt = pText.getBytes();
-        byte [] key = pswrd.getBytes();
-        byte [] res = new byte[pText.length()];
-
-        for (int i = 0; i < txt.length; i++){
-            res[i] = (byte) (txt[i] ^ key [i % key.length]);
-        }
+//        byte [] txt = pText.getBytes();
+//        byte [] key = pswrd.getBytes();
+//        byte [] res = new byte[pText.length()];
+//
+//        for (int i = 0; i < txt.length; i++){
+//            res[i] = (byte) (txt[i] ^ key [i % key.length]);
+//        }
 
     }
 

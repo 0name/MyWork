@@ -76,6 +76,19 @@ public class Homework {
     public static void Ten(String filename) throws IOException {
         File fileWP = new File(filename);
         List<String> lines = Files.readAllLines(fileWP.toPath()); // создаем коллекцию в которую помещаем содержимое файла
+        Map<String, Integer> words = getStringIntegerMap(lines);
+//        for (int j = 0; j <10 ; j++){
+//          int i = 7000;
+//          if (j>
+//      }
+            for (Map.Entry entry: words.entrySet()) {
+                if ((Integer)entry.getValue()>7000) // результат получился в рез-те совпадения, не верно - нужно переделать
+                    System.out.println(entry.getKey() + " : " + entry.getValue());
+            }
+         //   System.out.println(words);
+    }
+
+    public static Map<String, Integer> getStringIntegerMap(List<String> lines) {
         String arr[];
         int i = 0;
         Map<String, Integer> words = new HashMap<>();
@@ -92,18 +105,10 @@ public class Homework {
                 }
             }
         }
-//        for (int j = 0; j <10 ; j++){
-//          int i = 7000;
-//          if (j>
-//      }
-            for (Map.Entry entry: words.entrySet()) {
-                if ((Integer)entry.getValue()>7000)
-                System.out.println(entry.getKey() + " : " + entry.getValue());
-            }
-            System.out.println(words);
+        return words;
     }
 
-//  5. Вывести частоту встречаемости букв анг алфавита по этой книге. Вывести в процентах для каждой буквы.
+    //  5. Вывести частоту встречаемости букв анг алфавита по этой книге. Вывести в процентах для каждой буквы.
     public static void Alph(String filename) throws IOException {
         File fileWP = new File(filename);
         List<String> lines = Files.readAllLines(fileWP.toPath()); // создаем коллекцию в которую помещаем содержимое файла
