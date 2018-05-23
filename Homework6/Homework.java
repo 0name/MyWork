@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.*;
+import java.util.stream.Stream;
 
 /*
 1. Сосчитать частоту встречаемости слов в книге War and peace.
@@ -23,6 +24,9 @@ public class Homework {
         Groups(path);
         Ten(path);
      //   Alph(path);
+
+       /* Stream.of(path)
+        .max();*/
     }
 //  1. Сосчитать частоту встречаемости слов в книге War and peace.
     public static void WordsOfWarAndPeace(String filename, String word) throws IOException {
@@ -82,7 +86,7 @@ public class Homework {
 //          if (j>
 //      }
             for (Map.Entry entry: words.entrySet()) {
-                if ((Integer)entry.getValue()>7000) // результат получился в рез-те совпадения, не верно - нужно переделать
+                if ((Integer)entry.getValue()>7000) // результат получился в рез-те совпадени я, не верно - нужно переделать
                     System.out.println(entry.getKey() + " : " + entry.getValue());
             }
          //   System.out.println(words);
