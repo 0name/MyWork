@@ -48,9 +48,11 @@ public class WordCount {
         public void run() {
             // Считаем в wordCnt
             Homework.getStringIntegerMap(words);
-          /*  for (String word : words) {       // не нужно
 
-            }*/
+            synchronized(WordCount.class){
+              //  for (Map.Entry entry : words)
+
+            }
 
             // Сливаем в общую Map
         }
